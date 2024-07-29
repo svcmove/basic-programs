@@ -1,0 +1,9 @@
+# basic-programs
+
+A collection of quick applications made for personal use
+
+### entropy
+    - Calculate the entropy of the files passed via the command line
+
+### hexdump
+    - Display the file content in hexadecimal and octal

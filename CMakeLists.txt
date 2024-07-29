@@ -6,5 +6,7 @@ set(CMAKE_CXX_STANDARD 23)
 add_library(common STATIC program.cpp common.h)
 
 include_directories(.)
+add_subdirectory(external/boost)
 
 add_subdirectory(entropy)
+add_subdirectory(hexdump)
