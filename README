@@ -2,8 +2,17 @@
 
 A collection of quick applications made for personal use
 
-### entropy
+#### entropy
     - Calculate the entropy of the files passed via the command line
 
-### hexdump
+#### hexdump
     - Display the file content in hexadecimal and octal
+
+#### today
+    - Display the files modified today in the specified directories
+
+### Compile all the tools with the following commands
+- mkdir build
+- cd build
+- cmake -DCMAKE_BUILD_TYPE=Release -GNinja ..
+- ninja
