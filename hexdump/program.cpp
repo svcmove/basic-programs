@@ -96,7 +96,7 @@ i32 main(const i32 argc, char** argv) {
     do {
         auto block{count != -1 ? (count > col ? (col % count) ? col : count : count) : col};
         std::ranges::fill(bytesTable, '-');
-        std::ranges::fill(asciiTable, '.');
+        std::ranges::fill(asciiTable, '-');
 
         stream.read(&bytesTable[0], block);
         read = stream.gcount();
@@ -136,15 +136,14 @@ i32 main(const i32 argc, char** argv) {
                     std::print("{:02x}", bytesTable[index]);
                 else
                     std::print("{:03o}", bytesTable[index]);
-                if (formatFunction(bytesTable[index]) )
-                    asciiTable[index] = bytesTable[index];
+                asciiTable[index] = formatFunction(bytesTable[index]) ? bytesTable[index] : '.';
             } else {
-                std::print("{}", bytesTable[index]);
+                std::print("{}{}", bytesTable[index], bytesTable[index]);
             }
         }
         for (index = {}; index < col; index++) {
             if (!index)
-                std::print(" :: ");
+                std::print(" : ");
             std::print("{}", asciiTable[index]);
         }
 
