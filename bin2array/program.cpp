@@ -16,7 +16,7 @@ void quit(const std::format_string<Args...> format, Args&&... args) {
 
 u32 seek{},
     count{},
-    col{};
+    col{12};
 
 i32 main(const i32 argc, char** argv) {
     namespace po = boost::program_options;
@@ -89,7 +89,9 @@ i32 main(const i32 argc, char** argv) {
             continue;
 
         for (decltype(br) index{}; index < br; index++) {
-            if (!(offset % col))
+            if (!offset)
+                out << "\n\t"; // NOLINT(*-branch-clone)
+            else if (!(offset % col))
                 out << "\n\t";
             out << std::format("{:#04x}, ", buffer[index]);
             offset++;
