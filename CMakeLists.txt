@@ -16,3 +16,4 @@ add_subdirectory(hexdump)
 add_subdirectory(today)
 
 add_subdirectory(disasop)
+add_subdirectory(bin2array)

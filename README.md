@@ -15,6 +15,9 @@ A collection of quick applications made for personal use
     - Decompiles the specified instructions from a variety of RISC architectures
     - Supported processors: "thumb", "a32", "a64", "mips32", "mipsel", "mips64", "mips64el"
 
+#### bin2array
+    - Dump the content of the specified file into a C++ header file
+
 ### Compile all the tools with the following commands
 - mkdir build
 - cd build
